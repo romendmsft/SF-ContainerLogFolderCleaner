@@ -4,8 +4,8 @@ This is a Service Fabric application which deletes a folder on every SF node per
 Example deployment:
 
 ```
-Copy-ServiceFabricApplicationPackage -ApplicationPackagePath .\FolderCleaner\
-Register-ServiceFabricApplicationType -ApplicationPathInImageStore FolderCleaner
+Copy-ServiceFabricApplicationPackage -ApplicationPackagePath .\SF-FolderCleaner-master\
+Register-ServiceFabricApplicationType -ApplicationPathInImageStore SF-FolderCleaner-master
 New-ServiceFabricApplication -ApplicationName fabric:/QueryTraceCleaner -ApplicationTypeName FolderCleanerType -ApplicationTypeVersion 1.0.0 -ApplicationParameter @{}
 New-ServiceFabricService -Stateless -PartitionSchemeSingleton -ApplicationName fabric:/QueryTraceCleaner -ServiceName fabric:/QueryTraceCleaner/CleanerSvc -ServiceTypeName FolderCleanerType -InstanceCount -1
 ```
