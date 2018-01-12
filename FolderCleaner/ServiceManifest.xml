@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ServiceManifest Name="FolderCleaner" Version="1.0.0" xmlns="http://schemas.microsoft.com/2011/01/fabric" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ManifestId="59b4fb77-0363-4e05-bc73-96758498dbe9">
+  <ServiceTypes>
+    <!-- This is the name of your ServiceType. 
+         This name must match the string used in RegisterServiceType call in Program.cs. -->
+    <StatelessServiceType ServiceTypeName="FolderCleanerType" UseImplicitHost="true" />
+  </ServiceTypes>
+  <CodePackage Name="Code" Version="1.0.0">
+    <EntryPoint>
+      <ExeHost>
+        <Program>mainEntryPoint.cmd</Program>
+      </ExeHost>
+    </EntryPoint>
+    <EnvironmentVariables>
+      <EnvironmentVariable Name="FolderToDelete" Value=""/>
+      <EnvironmentVariable Name="SleepInterval" Value=""/>
+    </EnvironmentVariables>
+  </CodePackage>
+</ServiceManifest>
